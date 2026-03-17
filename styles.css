@@ -1,0 +1,40 @@
+ *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-align: center;
+ }
+ 
+ 
+ 
+ 
+ p {
+            color: green;
+        }
+
+        h1{
+            color: red;
+            text-decoration: underline;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-transform: uppercase;
+        }
+
+        li {
+            color: purple;
+            background-color: yellow;
+
+        }
+
+        body {
+            background-color:rgb(199, 226, 236);
+        }
+
+
+        .lorem-paragraph{
+           color: white;
+        }
+
+        #ayoola {
+            text-transform: lowercase;
+            color: brown;
+        }
