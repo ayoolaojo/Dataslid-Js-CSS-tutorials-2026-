@@ -199,13 +199,23 @@ console.log(number1)
 console.log(1 != '1')
 
 
-const age = 18
- if ( age > 17){
-    console.log('Welocme to Dataslid')
+const age = 17
+hasPVC = false
+ if ( age >= 18 || hasPVC) {
+    console.log("You're aeligible to vote")
  } else{
-    console.log('sorry! minors not allowed')
+    console.log("You're not eligible to vote")
  }
 
+
+// STRING METHODS
+ console.log(myText2.charAt(0))
+ console.log(myText2.toUpperCase())
+ console.log(myText1.toLowerCase())
+ console.log(myText1[0])
+ console.log(myText2.at(-1))
+
+ console.log (myText1.concat(myText2))
 
 
 
