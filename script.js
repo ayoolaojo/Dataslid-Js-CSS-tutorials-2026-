@@ -201,8 +201,8 @@ console.log(1 != '1')
 
 const age = 17
 hasPVC = false
- if ( age >= 18 || hasPVC) {
-    console.log("You're aeligible to vote")
+ if ( age >= 18 && hasPVC) {
+    console.log("You're eligible to vote")
  } else{
     console.log("You're not eligible to vote")
  }
@@ -216,6 +216,77 @@ hasPVC = false
  console.log(myText2.at(-1))
 
  console.log (myText1.concat(myText2))
+
+
+ const _greetings = "You're welcome to Dataslid"
+
+ console.log(_greetings.length)
+
+
+ console.log(_greetings.toUpperCase())
+ console.log(_greetings.toLowerCase())
+
+ const firstLetter = _greetings.charAt(0)
+ console.log(firstLetter)
+
+
+ const lastLetter = _greetings.at(1)
+ console.log(lastLetter)
+
+ const personalGreeting = _greetings.concat(" Ayesha")
+
+console.log(personalGreeting)
+
+
+const slicedGreetings = _greetings.slice(7)
+console.log(slicedGreetings)
+
+const _slicedGreetings = _greetings.slice(7,16)
+console.log(_slicedGreetings)
+
+  const cars = '    toyota , honda, mercedes, bmw'
+const carsSubstring =  cars.substring(2,15)
+console.log(carsSubstring)
+
+const randomText =  "    Helo  Mjubarak       "
+console.log(randomText)
+
+const trimmedRT = randomText.trim()
+console.log(trimmedRT)
+
+const rText = 'ab'
+console.log(rText.padStart(15,'D'))
+
+const repeatedCars =  cars.repeat(3)
+console.log(repeatedCars)
+
+
+ console.log(cars.replace('toyota','mazda'))
+
+ const alphabets = 'zbcdefgerznhzecz'
+ console.log(alphabets.replaceAll('z', 'ab'))
+
+
+const splitCars = cars.split(',')
+console.log(cars)
+console.log(splitCars)
+console.log(typeof(cars))
+console.log(typeof(splitCars))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
