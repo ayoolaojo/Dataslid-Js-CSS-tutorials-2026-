@@ -275,6 +275,199 @@ console.log(typeof(splitCars))
 
 
 
+const name_ = 'Mubarak'
+
+console.log(name_.includes('t'))
+console.log(name_.includes('k'))
+
+
+
+const password = 'dATAS1_'
+
+const check = password.includes('0')
+console.log(check)
+
+console.log(/\d/.test(password)) 
+
+console.log(password.length > 6)
+
+
+
+const person = {
+    fullName: 'Paul Ayobami',
+    location: 'Ilobu',
+    gender: 'male',
+    single: true,
+
+}
+
+console.log(person.location)
+console.log(person['gender'])
+
+
+const ourNamez = ['Paul', 'Mubarak', true, false,0,100 ]
+const  ourLocations = ['ilobu', 'Halleluyah Estate', 'OgoOLUWA', 'oWODE']
+
+console.log(ourNamez[0])
+console.log(ourNamez[3])
+console.log(ourNamez[5])
+console.log(ourNamez.length)
+console.log(ourNamez)
+console.log(ourNamez.toString())
+console.log(ourNamez.at(1))
+
+
+const joinedArrays = ourNames.join(',')
+
+console.log(joinedArrays)
+
+const dogs = ['caucasian','rottwheileer', 'german sheperd', 'bulldog', 'eskimo', 'local dog' ]
+const poppedDogs =  dogs.pop()
+console.log(poppedDogs)
+
+dogs.push('pitbull')
+console.log(dogs)
+
+ourNamez.shift()
+console.log(ourNamez)
+
+
+dogs.unshift('bingo')
+console.log(dogs)
+
+
+const  randomThings = [ 'new' ,100 , 'Dataslid', 'mango', 'frontend' ]
+
+console.log(randomThings)
+
+console.log(randomThings[1])
+
+console.log(randomThings.length)
+
+
+const randomStrings = randomThings.toString()
+console.log(randomStrings)
+
+
+randomThings.pop()
+
+console.log(randomThings)
+
+randomThings.push('backend')
+console.log(randomThings)
+
+
+// randomThings.unshift('software')
+// console.log(randomThings)
+
+randomThings.shift()
+console.log(randomThings)
+
+console.log(typeof(randomThings))
+console.log(Array.isArray(randomThings))
+
+
+console.log(randomThings.at(1))
+console.log(randomThings.at(-1))
+
+
+const joinedRandomThings = randomThings.join(' , ')
+console.log(joinedRandomThings)
+console.log(joinedRandomThings.toUpperCase())
+
+console.log(Array.isArray(joinedRandomThings))
+
+
+const  bankNames = ['FCMB', 'GTB', 'fIDELITY', 'UBA']
+
+const joinedArray = bankNames.concat(randomThings,dogs)
+console.log(joinedArray)
+
+
+const complexNumbers = [[0,1,2,3,4] , [100,20,50,70,8,785], [-2,-7,-100]]
+console.log(complexNumbers[1])
+
+const flattenedArray = complexNumbers.flat()
+
+console.log(flattenedArray)
+
+
+
+const $ourNames = ['Ayoola', 'Paul','Imole','Mubarak','Aaishah']
+
+    $ourNames.map((name)=>{
+        console.log(name)
+    })
+
+
+    // $ourNames.splice(1,3)
+
+    // console.log($ourNames)
+
+      $ourNames.splice(2,0, 'David', 'Praise')
+
+      console.log($ourNames)
+
+      $ourNames.splice(0,2,'Moyo', 'Bello')
+      console.log($ourNames)
+
+
+      $ourNames.slice(2)
+      const slicedNames = $ourNames.slice(2)
+      console.log(slicedNames)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
