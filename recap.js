@@ -113,6 +113,110 @@ namez.forEach((name)=>{
 })
 
 
+let newNumero = 5
+newNumero += 10
+
+console.log(newNumero )
+
+let a = 5
+a += 1
+
+console.log(a)
+
+let fruit = 'sweet'
+fruit += ' potato'
+
+console.log(fruit)
+
+let num1 = 10
+n= 7
+
+console.log(10**2)
+console.log(10%3)
+
+// ** - exponential
+// % - modulus
+
+
+//  ==
+
+//  ===
+
+
+let num2 = 57
+
+num2 ++
+
+console.log(num2)
+
+
+num2 --
+console.log(num2)
+
+
+// && - and
+// || - or
+// !  - not
+
+
+const isStudent = true
+
+console.log(isStudent)
+
+// !=
+// !==
+
+// > - greater than
+
+// < - less than
+// >=  - greater than or equal
+// <=  - less than or equal
+
+
+ 
+// const age = prompt('enter your age');
+
+// if( age >= 18) {
+//     console.log(` you are ${age} years old , hence eligible to vote`)
+// } else {
+//     console.log(`Sorry, you are ${age} years old, minors cant vote`)
+// }
+
+//  if else Statements
+
+
+// if (condition)  {
+
+// } else {
+
+// }
+
+
+//  check if a given number is even or odd
+
+
+// const givenNumber = 99
+// if (givenNumber % 2 === 0) {
+//    console.log(`${givenNumber} is an even number `)
+// } else {
+//     console.log(`${givenNumber} is an odd number`)
+// }
+
+
+// Check if a number is positive or negative
+
+const newNum = 10
+
+// if( newNum.toString().includes('-')) {
+//   console.log('number is negative')
+// } else {
+//     console.log('number is positive number ')
+// }
+
+
+if(newNum >= 0) {
+
+}
 
 
 
