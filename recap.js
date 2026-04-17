@@ -219,6 +219,26 @@ if(newNum >= 0) {
 }
 
 
+const scores = 51
+
+switch(scores){
+    case scores > 50: 
+    console.log('passed');
+    break
+
+    default:
+        console.log('failed')
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
