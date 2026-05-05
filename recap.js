@@ -388,18 +388,132 @@ for(i=5; i >= 1; i--) {
 // reverse the elemnts of an array using for loop
 
 
-const theirNames= ' Mubarak,Paul,Ayoola, Qodri'
+const theirNames= ['mubarak', 'Quadri','ayoola', 'Paul' ]
+
+for (i = theirNames.length - 1; i >= 0; i--) {
+  console.log(theirNames[i])
+}
+
+const vowels =  'a e i o u'
+for(i = vowels.length - 1; i >= 0; i--) {
+  console.log(vowels[i])
+}
 
 
+const nameStrings = 'Mubarak, Paul, Qodri, Aishah, Ayoola'
 
 
+   const namesArray = nameStrings.split(',')
+   console.log(namesArray)
 
+ const reversedNames = namesArray.reverse().join('')
 
-
-
-
+ console.log(reversedNames)
 
  
+
+// Functions
+function  addTwoNumbers (x,y) {
+  console.log(x+y)
+}
+
+addTwoNumbers(10,11)
+addTwoNumbers(1,1)
+addTwoNumbers(12,0)
+addTwoNumbers(12,89)
+
+addTwoNumbers()
+console.log()
+
+
+function Greetings (username) {
+  return( username + ' Welcome to Dataslid')
+}
+
+
+Greetings('Aishah')
+Greetings('Qodri')
+Greetings('Samual')
+
+console.log(Greetings('Aishah'))
+
+
+const add = (t,y) => t + y
+
+function checkEvenOdd (num) {
+   if(num % 2 === 0){
+    console.log(num + ' is even')
+   } else {
+    console.log ( num + ' is odd')
+   }
+}
+
+
+checkEvenOdd(101)
+checkEvenOdd(22)
+checkEvenOdd(95)
+
+
+
+
+
+// write a function to cpaitalize the first letter of any given name
+
+let zName = 'aYOolA'
+
+console.log(zName.toUpperCase())
+console.log(zName.toLowerCase())
+
+
+
+// function formatName (name) {
+
+// }
+
+
+const formatName = (name) => {
+   console.log(name.at(0)
+ .toUpperCase()
+  + name.slice(1)
+  .toLowerCase())
+}
+
+
+
+
+formatName(zName)
+formatName('abDulbAKi  lASTNAME')
+formatName('bObOLa')
+
+
+
+
+const heading = document.getElementById('heading');
+
+const para =  document.getElementById('para')
+
+const btn =  document.getElementById('btn')
+
+heading.innerHTML = 'Welcome to Dataslid';
+
+btn.addEventListener('click',()=>{
+       para.innerText =  "I'm a paragraph"
+       para.style.color = 'red'
+})
+
+
+document.body.style.background = 'yellow'
+
+
+
+
+
+
+
+
+
+
+
 
 
 
