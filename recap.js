@@ -494,6 +494,12 @@ const para =  document.getElementById('para')
 
 const btn =  document.getElementById('btn')
 
+const colorInput = document.getElementById('colorInput')
+
+const bgBtn =  document.getElementById('bgBtn')
+
+const displayText = document.getElementById('displayText');
+
 heading.innerHTML = 'Welcome to Dataslid';
 
 btn.addEventListener('click',()=>{
@@ -502,7 +508,74 @@ btn.addEventListener('click',()=>{
 })
 
 
-document.body.style.background = 'yellow'
+
+bgBtn.addEventListener('click',()=> {
+    displayText.textContent = colorInput.value
+    document.body.style.backgroundColor = colorInput.value;
+} )
+
+
+const counter =  document.getElementById('counter');
+
+const addBtn = document.getElementById('increaseBtn');
+
+const decreaseBtn = document.getElementById('decreaseBtn');
+
+const resetBtn = document.getElementById('reset');
+
+
+let count = 0;
+
+
+function updateDisplay() {
+   counter.textContent =  count;
+}
+
+addBtn.addEventListener('click', ()=> {
+    count =  count + 1;
+    updateDisplay()
+    
+})
+
+decreaseBtn.addEventListener('click', ()=> {
+    count =  count - 1;
+     updateDisplay()
+   
+})
+
+resetBtn.addEventListener('click', ()=> {
+    count =  0;
+     updateDisplay()
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
