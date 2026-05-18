@@ -245,6 +245,80 @@ console.log(gret.slice(8))
 
 
 
+const randomWord =  'echo'
+
+console.log(randomWord.padStart(13,'yhsjshsjs'))
+
+const apology = 'I love you, I hate you'
+
+console.log(apology.replaceAll('I', 'We'))
+
+console.log(apology.repeat(10))
+
+console.log(apology.split(' '))
+
+console.log(apology)
+
+
+const carArray =  ['toyota', 'Lexus', 'Passat', 'BMW', 'Benz', ['Paul', 'Baqi', 'Imole'] ]
+const fruitArray = ['apple', 'banana', 'orange', 'mango', 'pineapple']
+
+const schoolArray = ['UniOsun', 'OAU', 'UI' , 'UNILAG', 'UNIBEN', 'UNN']
+
+console.log(carArray.length)
+console.log(carArray.toString())
+console.log(carArray.at(3))
+
+
+const carStrings =  carArray.join('-')
+
+console.log(carStrings)
+
+carArray.pop()
+
+console.log(carArray)
+
+carArray.push('mazda')
+
+console.log(carArray)
+
+carArray.unshift('ford')
+console.log(carArray)
+
+carArray.shift()
+console.log(carArray)
+
+console.log(carArray.concat(fruitArray, schoolArray))
+
+const newArray =  ['toyota', 'Lexus', 'Passat', 'BMW', 'Benz', ['Paul', 'Baqi', 'Imole'] ]
+
+console.log(newArray.flat())
+
+
+console.log(newArray.slice(2, 4))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
