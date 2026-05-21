@@ -298,8 +298,61 @@ console.log(newArray.flat())
 console.log(newArray.slice(2, 4))
 
 
+const players = ['Ronaldo', 'Messi', 'OLise', 'Dembele', 'Yamal']
+
+players.splice(1, 2,'Palmer', 'Gyokeres')
+
+console.log(players)
 
 
+players.splice(1,0, 'Harry Kane','Bruno Fernandes' )
+console.log(players)
+
+
+
+const favPlayers = players.toSpliced(0,1)
+console.log(favPlayers)
+
+
+favPlayers.map((player)=>console.log(player  + ' is a good baller.'))
+
+
+
+const numeros =  [10,1,25,7,8,96,13,58]
+
+numeros.forEach((num)=> console.log(num))
+
+
+const higherThan15  =  numeros.filter(n => n >= 10 )
+
+console.log(higherThan15)
+
+
+// if else statements
+
+
+// const age  = prompt('how old are you?')
+
+// if  (age >= 18 )   {
+//  alert(`You're eligible to vote`)
+// } else {
+//   alert(`Sorry you're a minor, you're not eligible to vote`)
+// }
+
+
+// Grading system   A = 70 AND ABOVE  , B = 60-69 , C = 50 -59 , BELOW 50 = FAIL.
+
+const score =  78;
+
+if (score > 70) {
+  console.log(`EXCELLENT!, Your grade is A`)
+} else if( score >= 60 && score < 70 ) {
+  console.log(`VERY GOOD!, Your grade is B`)
+}else if (score >= 50 && score < 60) {
+  console.log(` GOOD!, Your grade is C`)
+} else {
+  console.log('Sorry you Failed, work harder next time')
+}
 
 
 
