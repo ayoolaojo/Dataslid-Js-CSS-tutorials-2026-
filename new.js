@@ -353,6 +353,273 @@ if (score > 70) {
 } else {
   console.log('Sorry you Failed, work harder next time')
 }
+ 
+
+const isPresent =  true;
+
+// if (isPresent) {
+//   console.log('You are present')
+// } else {
+//   console.log('You are not present')
+// }
+
+// Ternary Operator
+
+
+isPresent ?  console.log('You are present') : console.log('You are not present')
+
+
+let fruitss =  ['apple','banana']
+fruitss.push('mango')
+
+console.log(fruitss)
+
+const colors = ['green', 'blue', 'red', 'yellow']
+colors.pop()
+
+console.log(colors)
+
+
+const numers = [1,2,3,4,7, 'carrot']
+numers.map((n)=>console.log(n))
+
+
+let numz =  [10,20,7,5]
+numz.map((n)=>console.log(n * 2))
+
+let values = [4,1,3,5,8,10]
+const even = values.filter((p)=> p % 2 === 0)
+console.log(even)
+
+
+const prices = [100, 200, 300, 1200]
+
+const totalz =  prices.reduce((a,b)=> a+ b) 
+
+console.log(totalz)
+
+
+
+let users = [
+  { id: 1, name: "John" },
+  { id: 2, name: "Sarah" },
+  { id: 3, name: "Mike" }
+];
+
+
+ console.log(users.find((user)=> user.id === 2))
+
+let string  = 'name'
+
+console.log(string.includes('m'))
+
+
+// Loops
+
+const cars = ['dataslid',1,3,4,6,7,'toyota', 'Lexus', 'Passat', 'BMW', 'Benz','Ayoola']
+
+for ( let i = 0; i < cars.length; i++ )  {
+  console.log(cars[i])
+}
+
+
+// let num = 1
+
+for(let i = 3; i <= 5; i++) {
+   console.log(i)
+}
+
+
+let college =  'Dataslid Softwares'
+for( let i = 0; i < college.length; i++) {
+   console.log(college[i])
+}
+
+
+
+for (let i = college.length - 1;  i >= 0;  i--) {
+   console.log(college[i])
+}
+
+
+// functions
+
+function Greet (username) {
+  console.log( username  + ' Welcome to Dataslid')
+}
+
+
+Greet('Paul')
+Greet('David')
+Greet('Taofeek')
+Greet('Baki')
+Greet('Mubarak')
+
+
+const addNumbers = (x,y) => {
+  return x + y
+}
+
+
+
+const zzz =  addNumbers(10,19)
+
+console.log(zzz)
+
+
+function Mathematical (x,y,z) {
+  console.log(x + y - z)
+}
+
+
+Mathematical(10,40,7)
+Mathematical(20,40,100)
+
+
+
+
+
+const count =  document.getElementById('count')
+const addBtn =  document.getElementById('addBtn')
+const decreaseBtn =  document.getElementById('decreaseBtn')
+
+
+// count.innerText =  'Dataslid';
+// count.style.color = 'red'
+
+// document.body.style.backgroundColor = 'bl
+
+
+let counter  =  0;
+count.textContent =  counter;
+
+addBtn.addEventListener('click', ()=> {
+       
+      let countz = counter ++;
+      count.innerHTML = countz;
+
+
+    
+} )
+
+const _values = [1,2,3,4,5,6,7,8,9,10]
+let evenNumbers =  _values.filter((value)=>(
+  value % 2 === 0
+))
+
+console.log(evenNumbers)
+
+const Users = [
+  { id: 1, name: "John" },
+  { id: 2, name: "Sarah" },
+  { id: 3, name: "Mike" }
+]
+
+
+
+let findUser2 =  Users.find((user)=>(
+  user.id === 2
+))
+
+console.log(findUser2)
+
+let animals = ["cat", "dog", "lion"];
+console.log(animals.includes('dog'));
+
+let nums = [9, 3, 7, 1];
+const sorted =  nums.sort((x,y)=>(
+  x - y
+))
+
+console.log(sorted)
+
+let products = [
+  { name: "Phone", price: 500 },
+  { name: "Laptop", price: 1500 },
+  { name: "Mouse", price: 50 }
+];
+
+const productNames = products.map((product)=>(
+   product.name
+))
+
+console.log(productNames)
+
+const todoInput =  document.getElementById('todoInput');
+const addTodo =  document.getElementById('add-todoBtn');
+const deleteTodo =  document.getElementById('delBtn');
+const todoList =  document.getElementById('todo-list');
+
+
+const Todos =  []
+
+addTodo.addEventListener('click', ()=>{
+   if(todoInput.value.trim() !== '') {
+     const newTodo =  {
+       id: Date.now(),
+       text : todoInput.value
+     }
+
+      Todos.push(newTodo)
+      const li = document.createElement('li')
+      li.textContent = newTodo.text
+
+      todoList.appendChild(li)
+   }
+
+   todoInput.value = ''
+
+  
+})
+
+
+deleteTodo.addEventListener('click',()=> {
+   todoList.removeChild(todoList.lastChild)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
