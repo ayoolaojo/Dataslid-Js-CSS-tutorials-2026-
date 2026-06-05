@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+      <h1 class="font-bold  text-4xl">Student Tracker</h1>
+      <ul id="studentList"></ul>
+
+
+
+
+
+
+
+
+    <script>
+       const studentList = document.getElementById('studentList')
+
+
+      const students = [
+        { name: "Amina", score: 45 },
+        { name: "Tunde", score: 82 },
+        { name: "Chidi", score: 60 },
+        { name: "Ngozi", score: 38 },
+        { name: "Daniel", score: 97 },
+        { name: "David", score: 97 },
+        { name: "Emeka", score: 96 },
+        { name: "Ayoola", score: 41 },
+        { name: "Fawaz", score: 95 },
+        { name: "Baki", score: 94 },
+        { name: "Clinton", score: 93 },
+        { name: "Mubarak", score: 92 },
+        { name: "Bobola", score: 91 },
+        { name: "Paul", score: 90 },
+        { name: "Dataslid", score: 99.9 },
+      ];
+
+      console.log(students)
+        students.forEach((student)=>{
+            const li =  document.createElement('li')
+            li.innerText = `${student.name} - ${student.score} points`
+            studentList.append(li)
+
+        })
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
