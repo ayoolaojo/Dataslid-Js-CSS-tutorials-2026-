@@ -6,7 +6,7 @@
     <title>Student Tracker</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
+  <body class="flex flex-col bg-teal-100 h-{auto} w-full items-center p-8 gap-5">
       <h1 class="font-bold  text-4xl">Student Tracker</h1>
       <ul id="studentList"></ul>
 
@@ -37,15 +37,46 @@
         { name: "Bobola", score: 91 },
         { name: "Paul", score: 90 },
         { name: "Dataslid", score: 99.9 },
+        { name: "Imole", score: 97 },
+
       ];
 
-      console.log(students)
-        students.forEach((student)=>{
-            const li =  document.createElement('li')
-            li.innerText = `${student.name} - ${student.score} points`
-            studentList.append(li)
+     
 
-        })
+
+          const stuName =  'Paul'
+           const score =  99
+          const remark = ` ${stuName}  is a punctual student , He scored ${score} in the last test `
+
+          console.log(remark)
+
+        const fruits = ['orange', 'mangoes', 'banana', 'apples', 'lemon', 'pineapple']
+
+          console.log(students)
+          const renderStudents = (list) => {
+             list.forEach((student)=> {
+              const li = document.createElement('li');
+              li.innerText = ` ${student['name']}  -  ${student.score} points `;
+              studentList.appendChild(li)
+
+              if(student.score >= 50) {
+                 li.style.color = 'green'
+              } else {
+                li.style.color = 'red'
+              }
+
+             })
+
+          }
+
+          renderStudents(students)
+
+
+
+
+          
+
+          
     </script>
   </body>
 </html>
