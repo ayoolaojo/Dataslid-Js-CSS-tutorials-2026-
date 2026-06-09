@@ -6,20 +6,23 @@
     <title>Student Tracker</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="flex flex-col bg-teal-100 h-{auto} w-full items-center p-8 gap-5">
-      <h1 class="font-bold  text-4xl">Student Tracker</h1>
-      <ul id="studentList"></ul>
-
-
-
-
-
-
-
+  <body
+    class="flex flex-col bg-teal-100 h-{auto} w-full items-center p-8 gap-5"
+  >
+    <h1 class="font-bold text-4xl">Student Tracker</h1>
+    <ul id="studentList"></ul>
+    <p id="report"></p>
+    <button
+      class="bg-green-600 text-white w-50 px-10 text-center rounded-full"
+      id="passedStudentsBtn"
+    >
+      Passed Students
+    </button>
 
     <script>
-       const studentList = document.getElementById('studentList')
-
+      const studentList = document.getElementById("studentList");
+      const passedStudentsBtn = document.getElementById("passedStudentsBtn");
+      const report = document.getElementById("report");
 
       const students = [
         { name: "Amina", score: 45 },
@@ -38,52 +41,69 @@
         { name: "Paul", score: 90 },
         { name: "Dataslid", score: 99.9 },
         { name: "Imole", score: 97 },
-
+        { name: "Random", score: 9 },
+        { name: " Lamidi", score: 81 },
       ];
 
-     
+      // function Greeting (list) {
+      //     list.forEach((a)=> {
+      //       const h1 = document.createElement('h1');
+      //       h1.innerText =  `${a.name}--Dataslid` ;
+      //       sample.append(h1)
 
+      //     })
+      // }
 
-          const stuName =  'Paul'
-           const score =  99
-          const remark = ` ${stuName}  is a punctual student , He scored ${score} in the last test `
+      // Greeting(students)
+      // Greetings()
 
-          console.log(remark)
+      const passed = students.filter((student) => student.score >= 50).length;
 
-        const fruits = ['orange', 'mangoes', 'banana', 'apples', 'lemon', 'pineapple']
+      console.log(students);
+      const renderStudents = (list) => {
+        list.forEach((student) => {
+          const li = document.createElement("li");
+          li.innerText = ` ${student["name"]}  -  ${student.score} points `;
+          studentList.appendChild(li);
 
-          console.log(students)
-          const renderStudents = (list) => {
-             list.forEach((student)=> {
-              const li = document.createElement('li');
-              li.innerText = ` ${student['name']}  -  ${student.score} points `;
-              studentList.appendChild(li)
-
-              if(student.score >= 50) {
-                 li.style.color = 'green'
-              } else {
-                li.style.color = 'red'
-              }
-
-             })
-
+          if (student.score >= 50) {
+            li.style.color = "green";
+          } else {
+            li.style.color = "red";
           }
+        });
 
-          renderStudents(students)
+        report.innerText = `${passed} students passed out of ${students.length}`;
+        report.style.color = "red";
+      };
 
+      renderStudents(students);
 
+      const filteredStudents = () => {
+        // return list.filter((student)=> student.score >= 50).
+        // forEach((student)=>{
+        //    const li = document.createElement('li');
+        //    li.innerText =`${student.name} - ${student.score} points`;
+        //    studentList.appendChild(li)
 
+        // })
 
-          
+        const passed = students.filter((student) => student.score >= 50);
+        renderStudents(passed);
 
-          
+        report.innerText = `${passed.length} students passed out of ${students.length}`;
+        report.style.color = "red";
+      };
+
+      // console.log(passed)
+
+      // const filtered = students.filter((student)=>student.score >= 50);
+      // console.log(filtered)
+
+      passedStudentsBtn.addEventListener("click", () => {
+        studentList.innerHTML = "";
+        filteredStudents();
+      });
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
