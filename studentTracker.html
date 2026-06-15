@@ -19,10 +19,33 @@
       Passed Students
     </button>
 
+    <button class="bg-green-600 text-white w-50 px-10 text-center rounded-full"
+      id="allStudentsBtn">All Students</button>
+
+      <input id="newStudentName" type="text" placeholder="Enter student's name">
+      <input id="newStudentScore" type="number" placeholder="Enter student's score">
+
+       <button class="bg-green-600 text-white w-50 px-10 text-center rounded-full"
+      id="addNewSt">Add New Student</button>
+
+      
+
     <script>
       const studentList = document.getElementById("studentList");
       const passedStudentsBtn = document.getElementById("passedStudentsBtn");
       const report = document.getElementById("report");
+      const allStudentsBtn = document.getElementById("allStudentsBtn");
+      const newStudentName = document.getElementById('newStudentName')
+      const newStudentScore = document.getElementById('newStudentScore')
+      const addNewSt = document.getElementById('addNewSt')
+      
+    
+      
+
+    
+     
+
+
 
       const students = [
         { name: "Amina", score: 45 },
@@ -104,6 +127,56 @@
         studentList.innerHTML = "";
         filteredStudents();
       });
+
+      allStudentsBtn.addEventListener('click', ()=>{
+        renderStudents(students)
+      })
+
+
+       
+      //  function addNewStudent() {
+
+      //  }
+
+
+      const addNewStudent = () => { 
+          let nName = String(newStudentName.value).trim().toLowerCase()
+          let nScore = Number(newStudentScore.value)
+
+          if(nName === '' || isNaN(nScore) || nScore > 100){
+              alert('invalid Input')
+              return
+          }
+
+          
+
+
+         const newStudent = {
+           name : nName,
+           score : nScore
+         }
+
+         students.push(newStudent)
+
+        
+
+      }
+
+
+       addNewSt.addEventListener('click', ()=> {
+         addNewStudent()
+
+           renderStudents(students);
+
+           newStudentName.value = ''
+           newStudentScore.value = ''
+
+
+
+
+       })
+
+
     </script>
   </body>
 </html>
