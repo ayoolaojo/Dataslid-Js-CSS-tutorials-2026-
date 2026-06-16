@@ -10,6 +10,8 @@
     class="flex flex-col bg-teal-100 h-{auto} w-full items-center p-8 gap-5"
   >
     <h1 class="font-bold text-4xl">Student Tracker</h1>
+    <input class="w-80 h-10 p-2 bg-white rounded-full " type="search" id="searchInput"   /> <span>&#128269</span>
+    <button class="bg-green-600 text-white w-50 px-10 text-center rounded-full" id="searchBtn">Search</button>
     <ul id="studentList"></ul>
     <p id="report"></p>
     <button
@@ -19,33 +21,37 @@
       Passed Students
     </button>
 
-    <button class="bg-green-600 text-white w-50 px-10 text-center rounded-full"
-      id="allStudentsBtn">All Students</button>
+    <button
+      class="bg-green-600 text-white w-50 px-10 text-center rounded-full"
+      id="allStudentsBtn"
+    >
+      All Students
+    </button>
 
-      <input id="newStudentName" type="text" placeholder="Enter student's name">
-      <input id="newStudentScore" type="number" placeholder="Enter student's score">
+    <input id="newStudentName" type="text" placeholder="Enter student's name" />
+    <input
+      id="newStudentScore"
+      type="number"
+      placeholder="Enter student's score"
+    />
 
-       <button class="bg-green-600 text-white w-50 px-10 text-center rounded-full"
-      id="addNewSt">Add New Student</button>
-
-      
+    <button
+      class="bg-green-600 text-white w-50 px-10 text-center rounded-full"
+      id="addNewSt"
+    >
+      Add New Student
+    </button>
 
     <script>
       const studentList = document.getElementById("studentList");
       const passedStudentsBtn = document.getElementById("passedStudentsBtn");
       const report = document.getElementById("report");
       const allStudentsBtn = document.getElementById("allStudentsBtn");
-      const newStudentName = document.getElementById('newStudentName')
-      const newStudentScore = document.getElementById('newStudentScore')
-      const addNewSt = document.getElementById('addNewSt')
-      
-    
-      
-
-    
-     
-
-
+      const newStudentName = document.getElementById("newStudentName");
+      const newStudentScore = document.getElementById("newStudentScore");
+      const addNewSt = document.getElementById("addNewSt");
+      const searchInput = document.getElementById("searchInput");
+      const searchBtn = document.getElementById("searchBtn");
 
       const students = [
         { name: "Amina", score: 45 },
@@ -68,22 +74,13 @@
         { name: " Lamidi", score: 81 },
       ];
 
-      // function Greeting (list) {
-      //     list.forEach((a)=> {
-      //       const h1 = document.createElement('h1');
-      //       h1.innerText =  `${a.name}--Dataslid` ;
-      //       sample.append(h1)
-
-      //     })
-      // }
-
-      // Greeting(students)
-      // Greetings()
+     
 
       const passed = students.filter((student) => student.score >= 50).length;
 
       console.log(students);
       const renderStudents = (list) => {
+        studentList.innerHTML = "";
         list.forEach((student) => {
           const li = document.createElement("li");
           li.innerText = ` ${student["name"]}  -  ${student.score} points `;
@@ -96,20 +93,13 @@
           }
         });
 
-        report.innerText = `${passed} students passed out of ${students.length}`;
-        report.style.color = "red";
+    
       };
 
       renderStudents(students);
 
       const filteredStudents = () => {
-        // return list.filter((student)=> student.score >= 50).
-        // forEach((student)=>{
-        //    const li = document.createElement('li');
-        //    li.innerText =`${student.name} - ${student.score} points`;
-        //    studentList.appendChild(li)
-
-        // })
+        
 
         const passed = students.filter((student) => student.score >= 50);
         renderStudents(passed);
@@ -118,63 +108,65 @@
         report.style.color = "red";
       };
 
-      // console.log(passed)
-
-      // const filtered = students.filter((student)=>student.score >= 50);
-      // console.log(filtered)
+     
 
       passedStudentsBtn.addEventListener("click", () => {
         studentList.innerHTML = "";
         filteredStudents();
       });
 
-      allStudentsBtn.addEventListener('click', ()=>{
-        renderStudents(students)
-      })
+      allStudentsBtn.addEventListener("click", () => {
+        renderStudents(students);
+      });
+
+      
+
+      const addNewStudent = () => {
+        let nName = String(newStudentName.value).trim().toLowerCase();
+        let nScore = Number(newStudentScore.value);
+
+        if (nName === "" || isNaN(nScore) || nScore > 100) {
+          alert("invalid Input");
+          return;
+        }
+
+        const newStudent = {
+          name: nName,
+          score: nScore,
+        };
+
+        students.push(newStudent);
+      };
+
+      addNewSt.addEventListener("click", () => {
+        addNewStudent();
+
+        renderStudents(students);
+
+        newStudentName.value = "";
+        newStudentScore.value = "";
+      });
 
 
-       
-      //  function addNewStudent() {
+      searchInput.addEventListener('keyup',()=> {
+         const searchTerm = searchInput.value.trim().toLowerCase();
+         const searchFilter =  students.filter((student)=>(
+            student.name.toLowerCase().includes(searchTerm)
+         ))
+            
+        
+         renderStudents(searchFilter)
 
-      //  }
-
-
-      const addNewStudent = () => { 
-          let nName = String(newStudentName.value).trim().toLowerCase()
-          let nScore = Number(newStudentScore.value)
-
-          if(nName === '' || isNaN(nScore) || nScore > 100){
-              alert('invalid Input')
-              return
-          }
+          report.innerText = `showing ${searchFilter.length} out of ${students.length} `
+          report.style.color = 'indigo';
 
           
 
+      })
 
-         const newStudent = {
-           name : nName,
-           score : nScore
-         }
-
-         students.push(newStudent)
-
-        
-
-      }
-
-
-       addNewSt.addEventListener('click', ()=> {
-         addNewStudent()
-
-           renderStudents(students);
-
-           newStudentName.value = ''
-           newStudentScore.value = ''
-
-
-
-
-       })
+      searchBtn.addEventListener('click', ()=> {
+          searchInput.value = ''
+      })
 
 
     </script>
