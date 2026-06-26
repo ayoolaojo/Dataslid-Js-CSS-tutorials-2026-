@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetching explained..</title>
+</head>
+<body>
+
+    <h1>COMMENTS GALLERY</h1>
+    <p id="loadingState"></p>
+    <ul id="displayList"></ul>
+
+          
+
+
+                     
+
+
+                      
+
+
+    <script>    
+
+            //      Fetching Methods are : 
+            //  GET,
+            //  POST,
+            //  PATCH,
+            //  PUT,
+            //  DELETE
+
+
+            //           fetch(URL, {
+            //             method : 'POST',
+            //             header: {
+            //               'Content-Type' : 'application/json',
+            //                'authurization': 'bearer-tokens',
+            //             },
+            //             body: JSON.stringify({
+            //                 name: 'Ayoola',
+            //                 id:'20',
+
+            //             })
+            //           } ) 
+
+            // async/await
+
+         const baseUrl =  'https://jsonplaceholder.typicode.com/comments'
+         const loadingState = document.getElementById('loadingState')
+         const displayList = document.getElementById('displayList')
+
+             const  getComments = async() => {
+                    loadingState.innerText =  'Loading...Please wait'
+                 try {
+                    const response = await fetch(baseUrl)
+                    console.log(response)
+
+                    if(!response.ok) {
+                        throw new Error(`Error: ${response.statusText}`)
+                    }
+
+                    const comments = await  response.json()
+                    console.log(comments)
+
+                    loadingState.innerText = ''
+
+                   displayComments(comments)
+                    
+                 } catch (error) {
+                    console.log(error.message)
+                 }
+
+                
+                    
+             }
+
+
+            
+
+
+             const displayComments = (comments)=> {
+                comments.forEach((comment)=>{
+                    const li =  document.createElement('li')
+                    const id = document.createElement('h1')
+                    id.textContent = `${comment.id}`
+
+                    const name = document.createElement('h3')
+                    name.innerText = `${comment.name}`
+
+                    const email = document.createElement('em')
+                    email.innerText = `${comment.email}`
+
+                    const body = document.createElement('p')
+                    body.innerText = `${comment.body}`
+
+                     li.append(id)
+                 li.append(name)
+                 li.append(email)
+                 li.append(body)
+
+                 displayList.append(li)
+                })
+
+                
+             }
+
+
+
+              getComments()
+
+
+
+
+
+
+
+
+
+         
+    </script>
+</body>
+</html>
