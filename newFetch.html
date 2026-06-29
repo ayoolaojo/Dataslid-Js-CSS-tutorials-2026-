@@ -1,122 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fetching explained..</title>
-</head>
-<body>
-
-    <h1>COMMENTS GALLERY</h1>
+  </head>
+  <body>
+    <h1>Products Gallery</h1>
     <p id="loadingState"></p>
-    <ul id="displayList"></ul>
+    <p id="errorMessage"></p>
+    <ul id="displayProducts"></ul>
 
-          
+    <script>
+      //      Fetching Methods are :
+      //  GET,
+      //  POST,
+      //  PATCH,
+      //  PUT,
+      //  DELETE
 
+      //           fetch(URL, {
+      //             method : 'POST',
+      //             header: {
+      //               'Content-Type' : 'application/json',
+      //                'authurization': 'bearer-tokens',
+      //             },
+      //             body: JSON.stringify({
+      //                 name: 'Ayoola',
+      //                 id:'20',
 
-                     
+      //             })
+      //           } )
 
+      // async/await
 
-                      
+      // fetch(url,{
+      //     method: 'POST',
+      //     headers:{
+      //         'Content-Type': 'application/json',
+      //         'authorization': ''
+      //     },
+      //     body: JSON.stringify({
+      //         name: '',
+      //         email:'' ,
+      //         body:''
+      //     })
+      // })
 
+      //  const baseUrl =  'https://jsonplaceholder.typicode.com/comments'
+      //  const loadingState = document.getElementById('loadingState')
+      //  const displayList = document.getElementById('displayList')
 
-    <script>    
+      //      const  getComments = async() => {
+      //             loadingState.innerText =  'Loading...Please wait'
+      //          try {
+      //             const response = await fetch(baseUrl)
+      //             console.log(response)
 
-            //      Fetching Methods are : 
-            //  GET,
-            //  POST,
-            //  PATCH,
-            //  PUT,
-            //  DELETE
+      //             if(!response.ok) {
+      //                 throw new Error(`Error: ${response.statusText}`)
+      //             }
 
+      //             const comments = await  response.json()
+      //             console.log(comments)
 
-            //           fetch(URL, {
-            //             method : 'POST',
-            //             header: {
-            //               'Content-Type' : 'application/json',
-            //                'authurization': 'bearer-tokens',
-            //             },
-            //             body: JSON.stringify({
-            //                 name: 'Ayoola',
-            //                 id:'20',
+      //             loadingState.innerText = ''
 
-            //             })
-            //           } ) 
+      //            displayComments(comments)
 
-            // async/await
+      //          } catch (error) {
+      //             console.log(error.message)
+      //          }
 
-         const baseUrl =  'https://jsonplaceholder.typicode.com/comments'
-         const loadingState = document.getElementById('loadingState')
-         const displayList = document.getElementById('displayList')
+      //      }
 
-             const  getComments = async() => {
-                    loadingState.innerText =  'Loading...Please wait'
-                 try {
-                    const response = await fetch(baseUrl)
-                    console.log(response)
+      //      const displayComments = (comments)=> {
+      //         comments.forEach((comment)=>{
+      //             const li =  document.createElement('li')
+      //             const id = document.createElement('h1')
+      //             id.textContent = `${comment.id}`
 
-                    if(!response.ok) {
-                        throw new Error(`Error: ${response.statusText}`)
-                    }
+      //             const name = document.createElement('h3')
+      //             name.innerText = `${comment.name}`
 
-                    const comments = await  response.json()
-                    console.log(comments)
+      //             const email = document.createElement('em')
+      //             email.innerText = `${comment.email}`
 
-                    loadingState.innerText = ''
+      //             const body = document.createElement('p')
+      //             body.innerText = `${comment.body}`
 
-                   displayComments(comments)
-                    
-                 } catch (error) {
-                    console.log(error.message)
-                 }
+      //              li.append(id)
+      //          li.append(name)
+      //          li.append(email)
+      //          li.append(body)
 
-                
-                    
-             }
+      //          displayList.append(li)
+      //         })
 
+      //      }
 
-            
+      //       getComments()
 
+      const newBaseUrl = "https://fakestoreapi.com/products";
+      const loadingState = document.getElementById("loadingState");
+      const displayProducts = document.getElementById("displayProducts");
 
-             const displayComments = (comments)=> {
-                comments.forEach((comment)=>{
-                    const li =  document.createElement('li')
-                    const id = document.createElement('h1')
-                    id.textContent = `${comment.id}`
+      const getProducts = async () => {
+        loadingState.innerText = " Processing.....Please wait!";
+        try {
+          const response = await fetch(newBaseUrl);
+          if (!response.ok) {
+            throw new Error(`${response.statusText}`);
+          }
 
-                    const name = document.createElement('h3')
-                    name.innerText = `${comment.name}`
+          const products = await response.json();
+          console.log(products);
 
-                    const email = document.createElement('em')
-                    email.innerText = `${comment.email}`
+          loadingState.innerText = "";
 
-                    const body = document.createElement('p')
-                    body.innerText = `${comment.body}`
+          renderProducts(products);
+        } catch (error) {
+          console.log(error.message);
+        }
+      };
 
-                     li.append(id)
-                 li.append(name)
-                 li.append(email)
-                 li.append(body)
+      getProducts();
 
-                 displayList.append(li)
-                })
+      const renderProducts = (products) => {
+        products.forEach((product) => {
+          const li = document.createElement("li");
+          const id = document.createElement("h1");
+          id.innerText = `${product.id}`;
 
-                
-             }
+          const title = document.createElement("h2");
+          title.innerText = `${product.title}`;
 
+          const price = document.createElement("i");
+          price.innerText = `#${product.price}`;
 
+          const description = document.createElement("p");
+          description.innerText = `${product.description}`;
 
-              getComments()
+          const category = document.createElement("p");
+          category.innerText = `${product.category}`;
 
+          li.append(id);
+          li.append(title);
+          li.append(price);
+          li.append(description);
+          li.append(category);
 
-
-
-
-
-
-
-
-         
+          displayProducts.append(li);
+        });
+      };
     </script>
-</body>
+  </body>
 </html>
